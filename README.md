@@ -15,6 +15,6 @@ Para isso, o gerador atua em nível global, produzindo um mapa base determiníst
 
 O gerador opera através de uma pipeline central configurável, responsável por executar todas as etapas de geração do mundo.
 
-###Opções de Saída da Pipeline
+### Opções de Saída da Pipeline
 
 A pipeline principal oferece duas opções mutuamente exclusivas, configuráveis no ponto de entrada (Program.cs):
