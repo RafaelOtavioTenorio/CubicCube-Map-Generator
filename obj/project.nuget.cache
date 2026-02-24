@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "JpyRv8i5SmQ=",
+  "success": true,
+  "projectFilePath": "E:\\Projetos\\CubicCube Map Generator\\Cubic³MapGenerator\\Cubic³MapGenerator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rafael\\.nuget\\packages\\libnoise\\0.2.0\\libnoise.0.2.0.nupkg.sha512",
+    "C:\\Users\\Rafael\\.nuget\\packages\\microsoft.win32.systemevents\\10.0.0\\microsoft.win32.systemevents.10.0.0.nupkg.sha512",
+    "C:\\Users\\Rafael\\.nuget\\packages\\system.drawing.common\\10.0.0\\system.drawing.common.10.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'LibNoise 0.2.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net8.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "LibNoise",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}

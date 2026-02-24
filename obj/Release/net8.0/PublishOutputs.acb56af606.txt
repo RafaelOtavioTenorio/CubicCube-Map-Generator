@@ -1,0 +1,11 @@
+E:\Projetos\CubicCube Map Generator\Cubic³MapGenerator\bin\Release\net8.0\publish\Cubic³MapGenerator.exe
+E:\Projetos\CubicCube Map Generator\Cubic³MapGenerator\bin\Release\net8.0\publish\Cubic³MapGenerator.dll
+E:\Projetos\CubicCube Map Generator\Cubic³MapGenerator\bin\Release\net8.0\publish\Cubic³MapGenerator.deps.json
+E:\Projetos\CubicCube Map Generator\Cubic³MapGenerator\bin\Release\net8.0\publish\Cubic³MapGenerator.runtimeconfig.json
+E:\Projetos\CubicCube Map Generator\Cubic³MapGenerator\bin\Release\net8.0\publish\Cubic³MapGenerator.pdb
+E:\Projetos\CubicCube Map Generator\Cubic³MapGenerator\bin\Release\net8.0\publish\LibNoise.dll
+E:\Projetos\CubicCube Map Generator\Cubic³MapGenerator\bin\Release\net8.0\publish\Microsoft.Win32.SystemEvents.dll
+E:\Projetos\CubicCube Map Generator\Cubic³MapGenerator\bin\Release\net8.0\publish\System.Drawing.Common.dll
+E:\Projetos\CubicCube Map Generator\Cubic³MapGenerator\bin\Release\net8.0\publish\System.Private.Windows.Core.dll
+E:\Projetos\CubicCube Map Generator\Cubic³MapGenerator\bin\Release\net8.0\publish\System.Private.Windows.GdiPlus.dll
+E:\Projetos\CubicCube Map Generator\Cubic³MapGenerator\bin\Release\net8.0\publish\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
