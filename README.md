@@ -20,37 +20,37 @@ O gerador opera através de uma pipeline central configurável, responsável por
 A pipeline principal oferece duas opções mutuamente exclusivas, configuráveis no ponto de entrada (Program.cs):
 
 1. Exportação de imagem (Visualização)
-Gera imagens do mapa final (e mapas intermediários).
-Utilizado para:
+  Gera imagens do mapa final (e mapas intermediários).
+  Utilizado para:
   Debug visual.
   Ajuste de parâmetros.
   Validação de continentes, relevo e clima.
-Usa conversão direta de dados para pixels.
+  Usa conversão direta de dados para pixels.
 ➡️ Ideal durante desenvolvimento e balanceamento do gerador.
 
 2. Exportação estrutural (Para UnityEngine)
-Exporta todos os mapas gerados como estruturas de dados.
-Projetado para importação direta na Unity Engine.
-Não depende de conversão para imagem.
-Mantém precisão total dos dados.
-Esses dados são consumidos diretamente pelo sistema de geração de chunks voxel do jogo.
-Este é o modo de produção, usado pelo Cubic³.
+  Exporta todos os mapas gerados como estruturas de dados.
+  Projetado para importação direta na Unity Engine.
+  Não depende de conversão para imagem.
+  Mantém precisão total dos dados.
+  Esses dados são consumidos diretamente pelo sistema de geração de chunks voxel do jogo.
+  Este é o modo de produção, usado pelo Cubic³.
 
 ## Por que não usar apenas Noise ou WFC?
 
 ### Técnicas baseadas em Noise
 
-Excelente para variação local.
-Problemas em escala global:
-Falta de continentes bem definidos.
-Terrenos excessivamente caóticos.
-Navegação de longa distância pouco intuitiva.
+  Excelente para variação local.
+  Problemas em escala global:
+  Falta de continentes bem definidos.
+  Terrenos excessivamente caóticos.
+  Navegação de longa distância pouco intuitiva.
 
 ### Wave Function Collapse
 
-Alto custo computacional.
-Escala mal para mundos grandes e contínuos.
-Pouco controle sobre macro-estrutura geográfica.
+  Alto custo computacional.
+  Escala mal para mundos grandes e contínuos.
+  Pouco controle sobre macro-estrutura geográfica.
 
 Para Cubic³, era necessário um sistema macro-estrutural, capaz de definir continentes, regiões e clima antes da geração voxel.
 
