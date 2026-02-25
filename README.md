@@ -192,7 +192,7 @@ Esses dados influenciam:
 * Geração voxel contextual.
 
 ## Estrutura do Projeto
-
+```text
 Cubic³MapGenerator/
 ├── Program.cs                # Pipeline principal de geração
 ├── Seed.cs                   # Processamento de Seed para utilização na geração
@@ -210,6 +210,7 @@ Cubic³MapGenerator/
 ├── ContinentBlob.cs          # Criação dos dados dos Blobs de continentes
 ├── DataImageConverter.cs     # Conversão de imagens em dados
 └── Cubic³MapGenerator.csproj
+```
 
 ## Tecnologias e Técnicas
 
