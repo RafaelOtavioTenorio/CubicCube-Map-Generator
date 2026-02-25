@@ -21,14 +21,20 @@ A pipeline principal oferece duas opções mutuamente exclusivas, configuráveis
 
 1. Exportação de imagem (Visualização)
   Gera imagens do mapa final (e mapas intermediários).
+
   Utilizado para:
+  
   Debug visual.
+  
   Ajuste de parâmetros.
+  
   Validação de continentes, relevo e clima.
+  
   Usa conversão direta de dados para pixels.
+  
 ➡️ Ideal durante desenvolvimento e balanceamento do gerador.
 
-2. Exportação estrutural (Para UnityEngine)
+3. Exportação estrutural (Para UnityEngine)
   Exporta todos os mapas gerados como estruturas de dados.
   Projetado para importação direta na Unity Engine.
   Não depende de conversão para imagem.
