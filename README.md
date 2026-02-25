@@ -26,7 +26,8 @@ Utilizado para:
 * Ajuste de parâmetros.
 * Validação de continentes, relevo e clima.
 * Usa conversão direta de dados para pixels.
-➡️ Ideal durante desenvolvimento e balanceamento do gerador.
+
+Ideal durante desenvolvimento e balanceamento do gerador.
 
 2. Exportação estrutural (Para UnityEngine)
 * Exporta todos os mapas gerados como estruturas de dados.
@@ -92,6 +93,69 @@ Criação natural de:
 
 O objetivo não é aleatoriedade visual, mas navegabilidade e identidade geográfica.
 
+## Desempenho e otimização
+
+O Cubic³ Map Generator foi projetado desde o início com desempenho e escalabilidade em mente, considerando o impacto direto que a geração de mundo tem no pipeline de um jogo voxel 3D.
+
+### Paralelização e Multithreading
+
+Diversas etapas da geração foram paralelizadas utilizando multithreading, permitindo:
+* Execução simultânea de tarefas independentes
+* Melhor aproveitamento de CPUs multi-core
+* Redução significativa do tempo total de geração
+
+Entre as etapas paralelizadas estão:
+* Processamento de mapas de altitude
+* Cálculo de temperatura
+* Aplicação de erosão
+
+Essa abordagem garante que o sistema escale bem conforme o tamanho do mapa aumenta.
+
+### Resultados de Performance
+
+O gerador foi testado em diversas máquinas com diferentes configurações de hardware, apresentando tempos de geração consistentes:
+
+* Tempo mínimo: ~8 segundos
+* Tempo máximo: ~17 segundos
+
+Esses valores consideram a geração completa do mapa global, incluindo continentes, relevo, erosão e dados climáticos.
+
+O desempenho obtido é adequado tanto para pré-processamento offline, quanto para uso integrado ao pipeline de desenvolvimento do jogo.
+
+## Exemplo de Mapas Gerados
+
+Abaixo está um exemplo de mapas produzidos pelo Cubic³ Map Generator, utilizados tanto para validação visual quanto para debug e ajuste de parâmetros durante o desenvolvimento.
+
+### Mapa Continental
+
+![Mapa Continental](images/continental_map.png)
+
+### Mapa de Altitude
+
+![Mapa de altitude](images/height_map.png)
+
+### Mapa de Placas Tectônicas
+
+![Mapa de Tectônicas](images/plates_map.png)
+
+### Mapa de Precipitação
+
+![Mapa de Precipitação](images/precipitation_map.png)
+
+### Mapa de Rios e Corpos Aquáticos
+
+![Mapa de Rios](images/rivers_map.png)
+
+### Mapa de Temperatura
+
+![Mapa de Temperatura](images/temperature_map.png)
+
+### Mapa de Biomas (Final)
+
+![Mapa Final](images/biome_map.png)
+
+As imagens são geradas automaticamente pelo próprio sistema através do modo de exportação visual da pipeline.
+
 ## Macro → Micro (World → Chunks)
 
 O sistema é dividido em duas camadas bem definidas:
@@ -126,3 +190,45 @@ Esses dados influenciam:
 * Biomas futuros.
 * Variação climática.
 * Geração voxel contextual.
+
+## Estrutura do Projeto
+
+Cubic³MapGenerator/
+├── Program.cs                # Pipeline principal de geração
+├── Seed.cs                   # Processamento de Seed para utilização na geração
+│
+├── Maps/
+│   ├── Tectonics.cs          # Geração tectônica
+│   ├── HeightMap.cs          # Altitude global
+│   ├── Erosion.cs            # Suavização e erosão
+│   ├── Temperature.cs        # Mapa de temperatura
+│   ├── ContinentalData.cs    # Dados de massas continentais
+│   ├── BiomeMap.cs           # Geração do mapa final de biomas
+│   ├── Precipitation.cs      # Mapa de precipitação
+│   └── Rivers.cs             # Geração de rios e corpos de água
+│
+├── ContinentBlob.cs          # Criação dos dados dos Blobs de continentes
+├── DataImageConverter.cs     # Conversão de imagens em dados
+└── Cubic³MapGenerator.csproj
+
+## Tecnologias e Técnicas
+
+* C# / .NET
+* Geração Procedural
+* Modelagem Geográfica
+* Paralelização e Multithreading
+* Simulação tectônica através de Voronoi
+* Separação Macro vs Micro Geração
+* Determinismo por seed
+
+## Papel no Desenvolvimento do Cubic³
+Este gerador:
+* Define a geografia global do jogo
+* Alimenta diretamente a Unity Engine
+* Garante coerência entre chunks voxel
+* Serve como base para sistemas futuros
+
+Ele é parte essencial da engine de world generation do Cubic³.
+
+## Nota Final
+Este projeto foi desenvolvido sob medida para um jogo real em produção, priorizando escala, controle técnico e integração direta com a engine.
