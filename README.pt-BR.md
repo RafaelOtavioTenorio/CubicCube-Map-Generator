@@ -1,6 +1,8 @@
 # CubicCube-Map-Generator
 Large-Scale Earth-Like World Generator for Voxel 3D Games.
 
+🌎 **Languages:** [English](README.md) | [Português](README.pt-BR.md)
+
 O Cubic³ Map Generator é um sistema de geração procedural de mundos desenvolvido especificamente para o jogo Cubic³, atualmente em desenvolvimento pela Momentum.
 Seu objetivo é servir como a camada fundamental de world generation do jogo, permitindo a criação de mapas massivos, navegáveis e divididos em chunks, com continentes de escala earth-like, adequados para um jogo voxel 3D.
 
