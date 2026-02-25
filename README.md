@@ -59,106 +59,106 @@ Major drawbacks at global scale:
 
 Cubic³ required a macro-structure-first approach, defining continents, terrain, and climate before voxel-level generation.
 
-## Abordagem Técnica
+## Technical Approach
 
-### Projeção planar
+### Planar Projection
 
-A projeção planar foi escolhida para facilitar o uso do mapa na geração de chunks, também servindo como dados iniciais de minimizar posteriormente.
-Foi considerada a geração já com distorção cúbica ou esférica, mas foi decidido planar pois permite mais liberdade criativa para os designers. Além disso, também é possível realizar a distorção facilmente na Unity Engine caso seja necessário.
+Planar projection was chosen to facilitate the use of the map in chunk generation, also serving as initial data for later minimization.
+Generating the map directly with cubic or spherical distortion was considered, but planar projection was chosen because it allows greater creative freedom for designers. Additionally, distortion can be easily applied later within the Unity Engine if necessary.
 
-A modelagem do mundo é realizada com listas de dados contendo:
+World modeling is performed using data lists containing:
 * Altitude.
-* Dados continentais.
-* Temperatura.
+* Continental data.
+* Temperature.
 
-Essa abordagem:
-* Facilita indexação espacial.
-* Escala bem para mapas grandes.
-* Serve como base natural para chunking voxel.
+This approach:
+* Facilitates spatial indexing.
+* Scales well for large maps.
+* Serves as a natural base for voxel chunking.
 
-## Continentes Earth-Like
+## Earth-Like Continents
 
-### Massas Continentais Coesas
-* Continentes gerados como blobs contínuos.
+### Cohesive Continental Masses
+* Continents generated as continuous blobs.
 
-Controle explícito de:
-* Escala.
-* Distribuição.
-* Densidade.
+Explicit control over:
+* Scale.
+* Distribution.
+* Density.
 
-### Tectônica Simplificada
+### Simplified Tectonics
 
-* Simulação de placas em escala macro.
+* Macro-scale plate simulation.
 
-Criação natural de:
-* Cadeias montanhosas.
-* Planícies.
-* Fronteiras continentais.
+Natural creation of:
+* Mountain ranges.
+* Plains.
+* Continental boundaries.
 
-O objetivo não é aleatoriedade visual, mas navegabilidade e identidade geográfica.
+The goal is not visual randomness, but navigability and geographic identity.
 
-## Desempenho e otimização
+## Performance and Optimization
 
-O Cubic³ Map Generator foi projetado desde o início com desempenho e escalabilidade em mente, considerando o impacto direto que a geração de mundo tem no pipeline de um jogo voxel 3D.
+The Cubic³ Map Generator was designed from the start with performance and scalability in mind, considering the direct impact world generation has on the pipeline of a voxel 3D game.
 
-### Paralelização e Multithreading
+### Parallelization and Multithreading
 
-Diversas etapas da geração foram paralelizadas utilizando multithreading, permitindo:
-* Execução simultânea de tarefas independentes
-* Melhor aproveitamento de CPUs multi-core
-* Redução significativa do tempo total de geração
+Several stages of generation were parallelized using multithreading, allowing:
+* Simultaneous execution of independent tasks
+* Better utilization of multi-core CPUs
+* Significant reduction in total generation time
 
-Entre as etapas paralelizadas estão:
-* Processamento de mapas de altitude
-* Cálculo de temperatura
-* Aplicação de erosão
+Among the parallelized stages are:
+* Height map processing
+* Temperature calculation
+* Erosion application
 
-Essa abordagem garante que o sistema escale bem conforme o tamanho do mapa aumenta.
+This approach ensures that the system scales well as map size increases.
 
-### Resultados de Performance
+### Performance Results
 
-O gerador foi testado em diversas máquinas com diferentes configurações de hardware, apresentando tempos de geração consistentes:
+The generator was tested on multiple machines with different hardware configurations, presenting consistent generation times:
 
-* Tempo mínimo: ~8 segundos
-* Tempo máximo: ~17 segundos
+* Minimum time: ~8 seconds
+* Maximum time: ~17 seconds
 
-Esses valores consideram a geração completa do mapa global, incluindo continentes, relevo, erosão e dados climáticos.
+These values consider the complete generation of the global map, including continents, terrain, erosion, and climate data.
 
-O desempenho obtido é adequado tanto para pré-processamento offline, quanto para uso integrado ao pipeline de desenvolvimento do jogo.
+The achieved performance is suitable both for offline preprocessing and for integrated use within the game development pipeline.
 
-## Exemplo de Mapas Gerados
+## Generated Map Examples
 
-Abaixo está um exemplo de mapas produzidos pelo Cubic³ Map Generator, utilizados tanto para validação visual quanto para debug e ajuste de parâmetros durante o desenvolvimento.
+Below are examples of maps produced by the Cubic³ Map Generator, used both for visual validation and for debugging and parameter tuning during development.
 
-### Mapa Continental
+### Continental Map
 
 ![Mapa Continental](images/continental_map.png)
 
-### Mapa de Altitude
+### Height Map
 
 ![Mapa de altitude](images/height_map.png)
 
-### Mapa de Placas Tectônicas
+### Tectonic Plates Map
 
 ![Mapa de Tectônicas](images/plates_map.png)
 
-### Mapa de Precipitação
+### Precipitation Map
 
 ![Mapa de Precipitação](images/precipitation_map.png)
 
-### Mapa de Rios e Corpos Aquáticos
+### Rivers and Water Bodies Map
 
 ![Mapa de Rios](images/rivers_map.png)
 
-### Mapa de Temperatura
+### Temperature Map
 
 ![Mapa de Temperatura](images/temperature_map.png)
 
-### Mapa de Biomas (Final)
+### Biome Map (Final)
 
 ![Mapa Final](images/biome_map.png)
 
-As imagens são geradas automaticamente pelo próprio sistema através do modo de exportação visual da pipeline.
+Images are automatically generated by the system itself through the visual export mode of the pipeline.
 
 ## Macro → Micro (World → Chunks)
 
